@@ -1,1 +1,3 @@
 # group-builder
+### An application to facilitate breaking a larger group (like a class, or seminar) into smaller groups for study/discussion/break-out type events. 
+This application is tailored to classes that will meet several times and commonly break into smaller groups for various purposes. It uses local storage on the computer that runs it, so that the list that's created one time using group-builder is called up again the next time the program is launched. It allows for adding new students on the fly, permantly removing students from the list, and marking students absent for one grouping and present for the next! If breaking into small groups is your thing, then this is the app for you!
