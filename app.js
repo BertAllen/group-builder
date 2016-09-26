@@ -198,40 +198,9 @@
                     break;
             }
 
-            // if ((pc.students.length - absent) % pc.groupSize != 0) {
-            //     while (!tempName1) {
-            //         randNum = makeRand();
-            //         tempName1 = pc.students.splice(randNum, 1);
-            //         if (!tempName1[0].present) {
-            //             tempName1 = "";
-            //             continue;
-            //         }
-            //     }
-            //     pc.groups.push({ name1: tempName1[0].name, name2: "TA" });
-            //     tempName1 = "";
-            // }
-            // while (pc.students.length > 0) {
-            //     randNum = makeRand();
-            //     if (tempName1 == "") {
-            //         tempName1 = pc.students.splice(randNum, 1);
-            //         if (!tempName1[0].present) {
-            //             tempName1 = "";
-            //             continue;
-            //         }
-            //     } else {
-            //         tempName2 = pc.students.splice(randNum, 1);
-            //         if (!tempName2[0].present) {
-            //             tempName2 = "";
-            //             continue;
-            //         }
-            //         pc.groups.push({ name1: tempName1[0].name, name2: tempName2[0].name });
-            //         tempName1 = ""; tempName2 = "";
-            //     }
-            // }
-            // console.log(pc.pairs)
-
         }//end of assembleGroups
 
     }//end of PairController
 
 } ());
+const author = "Bert Allen";
