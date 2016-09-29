@@ -22,7 +22,7 @@
             </form>
                 
                 <ul ng-repeat="person in bc.studentArr track by $index">
-                    <li> <input type="checkbox" ng-model="person.present"><a ng-click="bc.confirmRemove(person.name)">{{person.name}}</a>                        <a class="badge" ng-if="bc.dropOne" ng-click="bc.dropStudent(person.name)">X</a> </li>
+                    <li> <input type="checkbox" ng-model="person.present"><a ng-click="bc.confirmRemove(person.name)">{{person.name}}</a><a class="badge" ng-if="bc.dropOne" ng-click="bc.dropStudent(person.name)">X</a> </li>
                 </ul>
             </div>
 

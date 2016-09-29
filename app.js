@@ -56,7 +56,9 @@
             for (let i = 0; i < bc.studentArr.length; i++) {
                 if (bc.studentArr[i].name == name) {
                     bc.studentArr.splice(i, 1);
-                    i--;
+                    if (i > 0) {
+                        i--;
+                    }
                 }
                 bc.studentArr[i].present = true;
             }
@@ -148,7 +150,7 @@
             switch (how) {
                 case "L"://leave alone
                     if (pc.underFlowAlert) {
-                    numberOfGroups++;
+                        numberOfGroups++;
                     }
                     for (let ng = 0; ng < numberOfGroups; ng++) {
                         pc.groups[ng] = [];
@@ -182,7 +184,7 @@
                         pc.groupSize--;
                         pc.underFlowAlert = 0;
                     } else {
-                    pc.underFlowAlert = numberOfGroups - pc.underFlowAlert;
+                        pc.underFlowAlert = numberOfGroups - pc.underFlowAlert;
                     }
                     for (let ng = 0; ng < numberOfGroups; ng++) {
                         pc.groups[ng] = [];
