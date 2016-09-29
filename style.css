@@ -2,7 +2,7 @@
     border: solid #060 2px;
     margin: 2px;
     border-radius: 20%;
-    text-align: center;
+    text-align: center
 }
 
 a:hover{
@@ -14,7 +14,7 @@ a.badge:hover{
 }
 
 .btn-awesome{
-    background-color: #a0a;
+    background-color: #a4a;
     color: white
 }
 
