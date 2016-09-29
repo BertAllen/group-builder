@@ -56,9 +56,6 @@
             for (let i = 0; i < bc.studentArr.length; i++) {
                 if (bc.studentArr[i].name == name) {
                     bc.studentArr.splice(i, 1);
-                    if (i > 0) {
-                        i--;
-                    }
                 }
                 bc.studentArr[i].present = true;
             }
