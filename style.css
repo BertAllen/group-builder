@@ -1,4 +1,11 @@
+.pairs{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
 .pair{
+    width: 30%;
     border: solid #060 2px;
     margin: 2px;
     border-radius: 20%;
