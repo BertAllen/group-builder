@@ -4,12 +4,18 @@ flex-direction: row;
 justify-content: space-around;
 }*/
 
+/*.groups{
+    display: inline-block
+}*/
+
 .pair{
     /*width: 30%;*/
     border: solid #060 2px;
     margin: 2px;
     border-radius: 20%;
-    text-align: center
+    text-align: center;
+    /*position: relative;
+    display: block*/
 }
 
 a:hover{
@@ -33,3 +39,7 @@ h1{
 h4{
     color: #900
 }
+
+/*.row{
+    display: inline-block
+}*/

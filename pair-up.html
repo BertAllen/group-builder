@@ -14,10 +14,10 @@
     <!--<button ng-click="pc.assembleGroups('L'); pc.underFlowShow=3">Form Groups</button>-->
     <button class="btn btn-awesome" ng-click="pc.assembleGroups('L')">Form Groups</button>
 </div>
-<div ng-repeat="group in pc.groups">
+<div ng-repeat="group in pc.groups" class="">
 <div class="pair col-xs-2">
-    <div ng-repeat="person in group track by $index">
-    <p> <strong> {{person.name}} </strong></p>
+    <div ng-repeat="person in group track by $index" class="">
+    <p class=""> <strong> {{person.name}} </strong></p>
     <!--<p><strong> {{pair.name2}} </strong></p>-->
     </div>
 </div>
