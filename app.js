@@ -142,6 +142,7 @@
         }
 
         pc.assembleGroups = function (how) {
+            pc.underFlowShow = 3;
             // function assemblePairs() {
             numberOfGroups = pc.numOfGrps();
             switch (how) {
@@ -175,13 +176,12 @@
                     }
                     break;
                 case "S"://Make smaller
-                    debugger
                     numberOfGroups++;
                     if (numberOfGroups == pc.underFlowAlert) {
                         pc.groupSize--;
                         pc.underFlowAlert = 0;
                     } else {
-                        pc.underFlowAlert = numberOfGroups - pc.underFlowAlert;
+                        pc.underFlowAlert = pc.groupSize - pc.underFlowAlert;
                     }
                     for (let ng = 0; ng < numberOfGroups; ng++) {
                         pc.groups[ng] = [];
