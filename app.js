@@ -175,20 +175,22 @@
                         }
                     }
                     break;
-                case "S"://Make smaller
+                case "S"://Make smaller -- cloning Make bigger because this code keeps generating logic errors
                     numberOfGroups++;
-                    if (numberOfGroups == pc.underFlowAlert) {
-                        pc.groupSize--;
-                        pc.underFlowAlert = 0;
-                    } else {
-                        pc.underFlowAlert = pc.groupSize - pc.underFlowAlert;
-                    }
+                        pc.groupSize--;//was on line 181.5
+                    // if (numberOfGroups == pc.underFlowAlert) {
+                    //     pc.underFlowAlert = 0;
+                    // } else {
+                    //     pc.underFlowAlert = pc.groupSize - pc.underFlowAlert;
+                    // }
                     for (let ng = 0; ng < numberOfGroups; ng++) {
                         pc.groups[ng] = [];
                         for (let gs = 0; gs < pc.groupSize; gs++) {
                             if (!gs && pc.underFlowAlert) {
-                                gs++;
-                                pc.underFlowAlert--;
+                                // gs++;
+                                tempName = grabName();
+                                pc.groups[ng].push(tempName);//added this line in refactor
+                                pc.underFlowAlert--;//added this line in refactor
                             }
                             tempName = grabName();
                             pc.groups[ng].push(tempName);
