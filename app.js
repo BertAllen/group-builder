@@ -1,6 +1,6 @@
 ; (function () {
 
-    angular.module("codePartners", [])
+    angular.module("groupBuilder", [])
 
         .component("builder", {
             templateUrl: "builder.html",
@@ -19,6 +19,7 @@
         })
 
     function BuilderController() {
+        //this controller is all about regularizing the data for the list ... and then saving it
         var bc = this;
         bc.studentArr = [];
         bc.studentArr2 = [];
@@ -30,8 +31,7 @@
         bc.groupSize = 2;
 
         // bc.loadStudents();
-        bc.studentArr = JSON.parse(localStorage.getItem("codePartners")) || [];
-
+        bc.studentArr = JSON.parse(localStorage.getItem("groupBuilder")) || [];
 
         bc.addStudent = function (newName) {
             let person = {
@@ -40,11 +40,11 @@
             }
             bc.name = "";
             bc.studentArr.unshift(person);
-            localStorage.setItem("codePartners", JSON.stringify(bc.studentArr));
+            localStorage.setItem("groupBuilder", JSON.stringify(bc.studentArr));
         }
 
         bc.loadStudents = function () {
-            bc.studentArr = JSON.parse(localStorage.getItem("codePartners"));
+            bc.studentArr = JSON.parse(localStorage.getItem("groupBuilder"));
         }
 
         bc.confirmRemove = function (name) {
@@ -59,7 +59,7 @@
                 }
                 bc.studentArr[i].present = true;
             }
-            localStorage.setItem("codePartners", JSON.stringify(bc.studentArr));
+            localStorage.setItem("groupBuilder", JSON.stringify(bc.studentArr));
             bc.dropOne = false;
         }
 
@@ -71,7 +71,7 @@
         bc.clearStudents = function (doIt) {
             if (doIt == "yes") {
                 bc.studentArr = [];
-                localStorage.setItem("codePartners", JSON.stringify(bc.studentArr));
+                localStorage.setItem("groupBuilder", JSON.stringify(bc.studentArr));
             } else {
                 alert("That was close!")
             }
@@ -80,6 +80,8 @@
     }//end of BuilderController
 
     function PairController() {
+        //this controller is for taking the existing large group 
+        //and breaking it into smaller groups of a (relatively) specific size
         var pc = this;
         var absent = 0;
         let tempName = "";
@@ -109,6 +111,7 @@
         }
 
         function underFlow(absent) {
+            //calculates the desired group size against the current existing group
             pc.underFlowAlert = (pc.students.length - absent) % pc.groupSize;
             pc.underFlowAlert2 = pc.underFlowAlert;
             if (pc.underFlowAlert != 0) {
@@ -125,6 +128,7 @@
         }
 
         function grabName() {
+            //pulls one name out of the working list and returns it
             let grabbed = "";
             while (!grabbed) {
                 randNum = makeRand();
@@ -145,6 +149,7 @@
             pc.underFlowShow = 3;
             // function assemblePairs() {
             numberOfGroups = pc.numOfGrps();
+            //main guts of the assembleGroups function --v
             switch (how) {
                 case "L"://leave alone
                     if (pc.underFlowAlert) {
@@ -177,7 +182,7 @@
                     break;
                 case "S"://Make smaller -- cloning Make bigger because this code keeps generating logic errors
                     numberOfGroups++;
-                        pc.groupSize--;//was on line 181.5
+                    pc.groupSize--;//was on line 181.5
                     // if (numberOfGroups == pc.underFlowAlert) {
                     //     pc.underFlowAlert = 0;
                     // } else {
@@ -197,7 +202,7 @@
                         }
                     }
                     break;
-            }
+            }//end switch
 
         }//end of assembleGroups
 
